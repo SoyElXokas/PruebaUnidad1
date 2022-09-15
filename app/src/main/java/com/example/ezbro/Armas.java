@@ -31,6 +31,7 @@ public class Armas extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.ListRecycleView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         recyclerView.setAdapter(listAdapter);
     }
 }
