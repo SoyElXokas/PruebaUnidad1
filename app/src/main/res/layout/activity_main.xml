@@ -92,6 +92,12 @@
             android:textColorHint="@color/white"
             android:autofillHints="" />
 
+        <CheckBox
+            android:id="@+id/checkNotificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notificaciones"
+            android:textColor="#607D8B"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

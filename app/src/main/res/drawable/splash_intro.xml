@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:drawable="@color/black"/>
+        <item>
+            <bitmap
+                android:gravity="center"
+                android:src="@drawable/escapefromtarkov"
+                android:layout_gravity="center"
+                android:scaleType="center"
+                android:layout_width="360dp"
+                android:layout_height="360dp"
+                />
+        </item>
+</layer-list>

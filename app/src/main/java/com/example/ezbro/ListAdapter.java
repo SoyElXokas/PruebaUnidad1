@@ -70,8 +70,4 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>
             estado.setText(item.getEstado());
         }
     }
-
-
-
-
 }
