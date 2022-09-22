@@ -12,6 +12,7 @@ import java.util.List;
 public class Armas extends AppCompatActivity {
 
     List<ListElement> elements;
+    private String palabra ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
