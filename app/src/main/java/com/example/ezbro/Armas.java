@@ -26,6 +26,10 @@ public class Armas extends AppCompatActivity {
         elements = new ArrayList<>();
         elements.add(new ListElement("#850617", "Martina","Santiago", "Diva"));
         elements.add(new ListElement("#850617", "Simon","Santiago", "Locura y Maldad"));
+        elements.add(new ListElement("#850617", "Enyerver","MaipuCity", "7 Gramos"));
+        elements.add(new ListElement("#850617", "Santiago","Santiago", "Truzkita"));
+        elements.add(new ListElement("#850617", "Javier","MaipuCity", "JP"));
+
 
 
         ListAdapter listAdapter = new ListAdapter(elements, this);
