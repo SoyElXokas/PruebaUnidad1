@@ -48,7 +48,7 @@ public class segundoActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("")
                 .setMessage("¡En esta parte verás información resumida de que es EFT y futuros cambios! ")
-                .setPositiveButton("Rico", new DialogInterface.OnClickListener() {
+                .setPositiveButton("EZ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogo, int i) {
                         dialogo.dismiss();
