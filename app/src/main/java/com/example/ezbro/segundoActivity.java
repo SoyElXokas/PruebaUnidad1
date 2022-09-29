@@ -1,7 +1,9 @@
 package com.example.ezbro;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +17,9 @@ public class segundoActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segundo);
+
+        cuartoDialogo();
+
     }
 
     public void nuevaPag (View view)
@@ -38,4 +43,19 @@ public class segundoActivity extends AppCompatActivity {
                 break;
         }
     }
+    private void cuartoDialogo()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("")
+                .setMessage("¡En esta parte verás información resumida de que es EFT y futuros cambios! ")
+                .setPositiveButton("Rico", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogo, int i) {
+                        dialogo.dismiss();
+                    }
+                })
+                .create().show();
+    }
+
+
 }

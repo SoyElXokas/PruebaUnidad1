@@ -127,6 +127,49 @@ public class MainActivity extends AppCompatActivity {
          ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.strDeptos, android.R.layout.simple_spinner_item);
          strDeptos.setAdapter(adapter);
 
-}
+        tercerDialogo();
+        segundoDialogo();
+        mostrarDialogo();
 
+}
+    private void mostrarDialogo()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("Hola esto es un anuncio!")
+                .setMessage("Esta app esta hecha con la intencion de informar datos y lore de Escape From Tarkov. ¡Disfrutalo!")
+                .setPositiveButton("Esta bien", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogo, int i) {
+                        dialogo.dismiss();
+                    }
+                })
+                .create().show();
+    }
+
+    private void segundoDialogo()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("")
+                .setMessage("Recuerda que esto es un proyecto, no consideres que esté terminado, porque no lo esta jaja´nt")
+                .setPositiveButton("Comprendo", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogo, int i) {
+                        dialogo.dismiss();
+                    }
+                })
+                .create().show();
+    }
+    private void tercerDialogo()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("")
+                .setMessage("Tambien te recuerdo que soy Simon Sanchez, mas conocido como Chivo, ¡SALUDOS!")
+                .setPositiveButton("Rico", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogo, int i) {
+                        dialogo.dismiss();
+                    }
+                })
+                .create().show();
+    }
 }
