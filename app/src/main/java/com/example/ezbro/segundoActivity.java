@@ -27,7 +27,11 @@ public class segundoActivity extends AppCompatActivity {
         Intent quienEs = new Intent(this, Armas.class);
         startActivity(quienEs);
     }
-
+    public void irAlMapa (View view)
+    {
+        Intent mapTarkov = new Intent(this, MapaTarkov.class);
+        startActivity(mapTarkov);
+    }
     public void Descripcion(View view)
     {
         switch(view.getId())

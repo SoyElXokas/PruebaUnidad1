@@ -63,10 +63,17 @@
 
             <Button
                 android:id="@+id/kienSoy"
-                android:layout_width="match_parent"
+                android:layout_width="151dp"
                 android:layout_height="wrap_content"
                 android:onClick="nuevaPag"
                 android:text="@string/quien_hizo_esto" />
+
+            <Button
+                android:id="@+id/btnLocalidad"
+                android:layout_width="151dp"
+                android:layout_height="wrap_content"
+                android:onClick="irAlMapa"
+                android:text="@string/donde_ocurre" />
 
         </LinearLayout>
     </ScrollView>
