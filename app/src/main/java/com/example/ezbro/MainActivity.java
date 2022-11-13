@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     CheckBox juan;
     NotificationManagerCompat notificationManagerCompat;
     Notification notificacion;
+
 
     Spinner strDeptos;
 
@@ -74,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         return super.onKeyDown(keyCode, event);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
