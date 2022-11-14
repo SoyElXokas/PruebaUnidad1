@@ -19,7 +19,7 @@ public class SegundaCara extends AppCompatActivity {
         TimerTask tarea = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(SegundaCara.this, Login.class);
+                Intent intent = new Intent(SegundaCara.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
