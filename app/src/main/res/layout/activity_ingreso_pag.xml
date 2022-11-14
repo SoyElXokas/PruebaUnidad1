@@ -8,7 +8,7 @@ android:padding = "10dp"
 tools:context=".IngresoPag">
 
 <EditText
-    android:id="@+id/txtUsuario"
+    android:id="@+id/txtUsuario1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:autofillHints=""
@@ -18,33 +18,20 @@ tools:context=".IngresoPag">
     android:minHeight="48dp"
     android:singleLine="true"
     android:textColor="@color/black"
-    android:textColorHint="@color/black" />
+    android:textColorHint="@color/black"/>/>
 
 <EditText
-    android:id="@+id/txtContra"
+    android:id="@+id/txtContra1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:autofillHints=""
     android:ems="10"
     android:hint="@string/txtContraHint"
     android:inputType="textPassword"
     android:minHeight="48dp"
     android:textColor="@color/black"
     android:textColorHint="@color/black"
-    android:autofillHints=""
-    android:layout_below="@+id/txtUsuario"/>
-<EditText
-    android:id="@+id/txtContraDos"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:ems="10"
-    android:hint="@string/txtContraDos"
-    android:inputType="textPassword"
-    android:minHeight="48dp"
-    android:textColor="@color/black"
-    android:textColorHint="@color/black"
-    android:autofillHints=""
-    android:layout_below="@+id/txtContra"/>
-
+    android:layout_below="@+id/txtUsuario1"/>
 <Button
     android:id="@+id/btnLogin1"
     android:layout_width="match_parent"
@@ -57,6 +44,6 @@ tools:context=".IngresoPag">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     tools:ignore="TextContrastCheck"
-    android:layout_below="@+id/txtContraDos"/>
+    android:layout_below="@+id/txtContra1"/>
 
 </RelativeLayout>
