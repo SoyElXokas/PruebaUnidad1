@@ -83,7 +83,7 @@
             android:entries="@array/strDeptos" />
 
         <EditText
-            android:id="@+id/txtUsuario"
+            android:id="@+id/txtUsuario1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -93,30 +93,20 @@
             android:minHeight="48dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"/>
 
         <EditText
-            android:id="@+id/txtContra"
+            android:id="@+id/txtContra1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/txtContraHint"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:autofillHints="" />
-        <EditText
-            android:id="@+id/txtContraDos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/txtContraDos"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:autofillHints="" />
+            android:layout_below="@+id/txtUsuario1"/>
 
         <CheckBox
             android:id="@+id/checkNotificacion"
