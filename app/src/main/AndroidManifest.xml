@@ -40,6 +40,12 @@
             android:name=".segundoActivity"
             android:exported="false" />
         <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".IngresoPag"
+            android:exported="false" />
+        <activity
             android:name=".SegundaCara"
             android:exported="true">
             <intent-filter>
