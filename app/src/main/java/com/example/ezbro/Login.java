@@ -10,9 +10,14 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.opengl.GLDebugHelper;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -31,6 +36,11 @@ public class Login extends AppCompatActivity
     EditText usuario, password;
     Button login,registro;
     DB DB;
+
+
+    SensorManager sm;
+    Sensor sensor;
+    SensorEventListener sensorEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +101,69 @@ public class Login extends AppCompatActivity
         tercerDialogo();
         segundoDialogo();
         mostrarDialogo();
+
+        juan = (CheckBox)findViewById(R.id.checkNotificacion);
+        juan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b)
+            {
+                if(juan.isChecked())
+                {
+                    notificationManagerCompat.notify(1, notificacion);
+                }
+                else
+                {
+                }
+            }
+        });
+
+
+        sm = (SensorManager)getSystemService(SENSOR_SERVICE);
+        sensor = sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+        if(sensor == null)
+            finish();
+
+        sensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent)
+            {
+                if(sensorEvent.values[0]<sensor.getMaximumRange()){
+                    Toast.makeText(Login.this, "Alejate de la pantalla, estas muy cerca", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy)
+            {
+
+            }
+        };
+        empezar();
+    }
+
+    public void empezar()
+    {
+       sm.registerListener(sensorEventListener, sensor, 2000*1000);
+    }
+    public void detener()
+    {
+        sm.unregisterListener(sensorEventListener);
+    }
+
+    @Override
+    protected void onPause() {
+        detener();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        empezar();
+        super.onResume();
     }
 
     private void mostrarDialogo()
@@ -133,4 +206,33 @@ public class Login extends AppCompatActivity
                 })
                 .create().show();
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if(keyCode == event.KEYCODE_BACK)
+        {
+            androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
+            builder.setMessage("¿Deseas salir?")
+                    .setPositiveButton("Si", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which){
+                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                            intent.addCategory(Intent.CATEGORY_HOME);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which){
+                            dialog.dismiss();
+                        }
+                    });
+            builder.show();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

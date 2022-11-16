@@ -5,12 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class segundoActivity extends AppCompatActivity {
+
+    SensorManager sm;
+    Sensor sensor;
+    SensorEventListener sensorEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -19,7 +27,50 @@ public class segundoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_segundo);
 
         cuartoDialogo();
+        sm = (SensorManager)getSystemService(SENSOR_SERVICE);
+        sensor = sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
+        if(sensor == null)
+            finish();
+
+        sensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent)
+            {
+                if(sensorEvent.values[0]<sensor.getMaximumRange()){
+                    Toast.makeText(segundoActivity.this, "Alejate de la pantalla, estas muy cerca", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy)
+            {
+
+            }
+        };
+        empezar();
+    }
+    public void empezar()
+    {
+        sm.registerListener(sensorEventListener, sensor, 2000*1000);
+    }
+    public void detener()
+    {
+        sm.unregisterListener(sensorEventListener);
+    }
+
+    @Override
+    protected void onPause() {
+        detener();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        empezar();
+        super.onResume();
     }
 
     public void nuevaPag (View view)
