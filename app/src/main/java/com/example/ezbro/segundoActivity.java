@@ -14,7 +14,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class segundoActivity extends AppCompatActivity {
+
+    private Button btnSalir;
+
+    private FirebaseAuth fireBase;
 
     SensorManager sm;
     Sensor sensor;
@@ -51,6 +57,14 @@ public class segundoActivity extends AppCompatActivity {
             }
         };
         empezar();
+
+        btnSalir = findViewById(R.id.btnSalir);
+        fireBase = FirebaseAuth.getInstance();
+
+        btnSalir.setOnClickListener(view ->{
+            fireBase.signOut();
+            startActivity(new Intent (this, LoginFireBase.class));
+        });
     }
     public void empezar()
     {

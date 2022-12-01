@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.mapbox.maps.MapView;
 import com.mapbox.maps.Style;
-import com.mapbox.maps.plugin.Plugin;
 
 public class MapaTarkov extends AppCompatActivity {
 

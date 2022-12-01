@@ -22,4 +22,8 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiY2hpdm9sZW5ub24iLCJhIjoiY2xhNWtkdm9lMGU2eDQwcnZ0dWptazBjciJ9.z7uWjgNSV7NgJQNUFQv0Rw</string>
     <string name="donde_ocurre">Donde ocurre</string>
+    <string name="correo">Correo</string>
+    <string name="correo1">Correo</string>
+    <string name="celular">Celular</string>
+    <string name="registrar">Registrar</string>
 </resources>

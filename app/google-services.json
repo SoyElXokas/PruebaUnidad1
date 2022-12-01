@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "600950820527",
+    "project_id": "ezbro-da06b",
+    "storage_bucket": "ezbro-da06b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600950820527:android:a74e03f7cbe2401cc84e5a",
+        "android_client_info": {
+          "package_name": "com.example.ezbro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600950820527-baokrhtoaqkc4t954svkunq8394hpp05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZcUQt0EdXRADqIw3SiIeKfOoLX1iwWtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600950820527-baokrhtoaqkc4t954svkunq8394hpp05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

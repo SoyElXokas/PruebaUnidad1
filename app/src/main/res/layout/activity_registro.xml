@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:padding = "10dp"
-tools:context="com.example.ezbro.IngresoPag">
+tools:context=".Registro">
 
 <EditText
     android:id="@+id/txtUsuario"
@@ -33,30 +33,42 @@ tools:context="com.example.ezbro.IngresoPag">
     android:autofillHints=""
     android:layout_below="@+id/txtUsuario"/>
 <EditText
-    android:id="@+id/txtContraDos"
+    android:id="@+id/txtCorreo1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
-    android:hint="@string/txtContraDos"
-    android:inputType="textPassword"
+    android:hint="@string/correo1"
+    android:inputType="textEmailAddress"
     android:minHeight="48dp"
     android:textColor="@color/black"
     android:textColorHint="@color/black"
     android:autofillHints=""
     android:layout_below="@+id/txtContra"/>
+    <EditText
+        android:id="@+id/txtCel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/celular"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:autofillHints=""
+        android:layout_below="@+id/txtCorreo1"/>
 
 <Button
-    android:id="@+id/btnLogin1"
+    android:id="@+id/btnRegistro"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:onClick="inicioSesion"
-    android:text="@string/btnIngresarLogin"
+    android:text="@string/registrar"
     android:textColor="#E1BEE7"
     android:layout_marginTop="50dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     tools:ignore="TextContrastCheck"
-    android:layout_below="@+id/txtContraDos"/>
+    android:layout_below="@+id/txtCel"/>
 
 </RelativeLayout>
